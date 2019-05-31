@@ -20,6 +20,8 @@ function preload() {
   jungleRun2 = loadImage('images/jungleRun2.jpg');
   chaseDown = loadImage('images/ChaseDown.jpg');
   DropDown = loadImage('images/DropDown.jpg');
+  WarningRobot = loadImage('images/WarningRobot.jpg');
+   
 }
 
 //button object

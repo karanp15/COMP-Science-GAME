@@ -162,6 +162,21 @@ var StoryScene1 = function() {
 
 }
 
+//WarningRobot Scene
+
+var WarningRobotScene = function(){
+ 
+  background(255);
+  image(WarningRobot,-220,-100,1050,850);
+  textSize(35);
+  button(280, 400, 200, 65, 255, 1);
+  textSize(40);
+  fill(0);
+  text("LETS GO!", 290, 450);
+  
+}
+
+
 //Question Scene
 
 var option = [];
