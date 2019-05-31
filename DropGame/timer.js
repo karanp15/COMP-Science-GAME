@@ -5,7 +5,7 @@ var timer = function() {
   var millisecond = round(millis()) - counter;
   textSize(20);
 
-  var runningM = round(15 + (msBeforeScene10/1000) - (millisecond / 1000));
+  var runningM = round(70 + (msBeforeScene10/1000) - (millisecond / 1000));
   
   if (runningM < 0) {
     scene++;
