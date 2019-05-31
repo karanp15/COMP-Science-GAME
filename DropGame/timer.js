@@ -8,9 +8,11 @@ var timer = function() {
   var runningM = round(70 + (msBeforeScene10/1000) - (millisecond / 1000));
   
   if (runningM < 0) {
-    scene++;
+    scene -= 4;
     counter = 0;
-    person.pos.x = 200;
+    person.pos.y = 200;
+    scene10Counter = 0;
+
   }
   
   textSize(40);

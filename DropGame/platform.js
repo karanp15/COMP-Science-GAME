@@ -36,7 +36,7 @@ var checkpoint = function(x, y, w, h, sceneAdd){
 
     scene += sceneAdd;
     restart += 1;
+    person.pos.y = 0;
     
   }
-  
 }

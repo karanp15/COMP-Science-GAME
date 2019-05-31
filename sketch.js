@@ -93,6 +93,7 @@ draw = function() {
   } else if (scene === 5) {
 
     StoryScene1();
+    //WarningRobotScene();
 
   } else if (scene === 6) {
 
