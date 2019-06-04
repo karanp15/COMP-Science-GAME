@@ -9,7 +9,7 @@ var platform = function() {
     
   }
 
-  checkpoint(100,18100,600,10,1);
+  checkpoint(100,18100,600,10,2);
   k = 0;
 }
 

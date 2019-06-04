@@ -6,7 +6,11 @@ var obstacle = [];
 var keygame;
 
 function setup() {
-  createCanvas(600, 600);
+  var canvas = createCanvas(600, 600);
+  var Cx = (windowWidth - width) / 2;
+  var Cy = (windowHeight - height) / 2;
+  canvas.position(Cx, Cy);
+  
   person = new Person();
   SidePerson = new SidePerson();
   for (h = 0; h < 100; h++) {
@@ -20,20 +24,18 @@ function setup() {
 function keyPressed() {
 
   if (keygame === 1) {
-    
+
     if (key === ' ' || keyCode === UP_ARROW) {
       var jump = createVector(0, -26);
       SidePerson.applyForce(jump);
+      JumpEffects.setVolume(0.4);
+      JumpEffects.play();
+
     }
-    
+
   } else if (keygame === 2) {
 
-    if (key === ' ' || keyCode === UP_ARROW || key === 'w') {
-
-      var jump2 = createVector(0, -20)
-      person.applyForce(jump2);
-
-    } else if (keyCode === LEFT_ARROW || key === 'a') {
+    if (keyCode === LEFT_ARROW || key === 'a') {
 
       var left = createVector(-8, 0)
       person.applyForce(left);
@@ -68,6 +70,7 @@ var CGreen = 166;
 var CBlue = 2;
 var scene10Counter = 0;
 var msBeforeScene10 = 0;
+var difficulty = 1;
 
 
 
@@ -84,6 +87,7 @@ draw = function() {
 
   } else if (scene === 3) {
 
+
     Instruction();
 
   } else if (scene === 4) {
@@ -93,10 +97,36 @@ draw = function() {
   } else if (scene === 5) {
 
     StoryScene1();
-    //WarningRobotScene();
 
   } else if (scene === 6) {
 
+    WarningRobotScene();
+
+  } else if (scene === 7) {
+
+    DropDownScene();
+    
+  } else if (scene === 8) {
+
+    if (scene10Counter === 0) {
+      msBeforeScene10 = round(millis());
+      scene10Counter++;
+    }
+
+    keygame = 2;
+    GameDrop();
+    
+  } else if (scene === 9) {
+
+    TempScene();
+
+  } else if (scene === 10) {
+
+    RestartCautionScene();
+
+  } else if (scene === 11) {
+
+    scene10Counter = 0;
     //Ckeck to refesh Questions
     if (firstTimeScene6 === 0) {
       randomNumbers();
@@ -105,45 +135,61 @@ draw = function() {
 
     Question();
 
-  } else if (scene === 7) {
+  } else if (scene === 12) {
 
     wrongScene();
 
-  } else if (scene === 8) {
+  } else if (scene === 13) {
 
     rightScene();
 
-  } else if (scene === 9) {
-    
-    DropDownScene();
-    
-  } else if (scene === 10) {
-  
-    if (scene10Counter === 0) {
-       msBeforeScene10 = round(millis());
-       scene10Counter++;
-    }
-    
-    keygame = 2;
-    GameDrop();
+  } else if (scene === 14) {
 
-  } else if (scene === 11) {
-    
-    scene10Counter = 0;
+    JungleEncouragementScene();
+
+  } else if (scene === 15) {
+
     ChaseDown();
-    
-  } else if (scene === 12) {
+
+  } else if (scene === 16) {
 
     keygame = 1;
     SideGame();
+
+  } else if (scene === 17) {
+
+    TempScene2();
+
+  } else if (scene === 18) {
+
+    RestartCautionScene();
     
-  } else if (scene === 13) {
+  } else if (scene === 19) {
+
+    scene10Counter = 0;
+    //Ckeck to refesh Questions
+    if (firstTimeScene6 === 0) {
+      randomNumbers();
+      firstTimeScene6++;
+    }
+
+    Question();
+
+  } else if (scene === 20) {
+
+    wrongScene();
+
+  } else if (scene === 21) {
+
+    rightScene();
+
+  } else if (scene === 22) {
 
     EndMenu();
 
-  } else if (scene === 14) {
+  } else if (scene === 23) {
 
     aboutUs();
-    
+
   }
 };

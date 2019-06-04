@@ -117,13 +117,39 @@ var Options = function() {
 
   //color option
 
-  ColorButton(320, 200, 75, 75, 242, 166, 2);
-  ColorButton(410, 200, 75, 75, 255, 53, 191);
-  ColorButton(500, 200, 75, 75, 0, 20, 150);
-  ColorButton(320, 290, 75, 75, 0, 255, 255);
-  ColorButton(410, 290, 75, 75, 63, 232, 37);
-  ColorButton(500, 290, 75, 75, 200, 50, 0);
+  ColorButton(320, 165, 75, 75, 242, 166, 2);
+  ColorButton(410, 165, 75, 75, 255, 53, 191);
+  ColorButton(500, 165, 75, 75, 0, 20, 150);
+  ColorButton(320, 255, 75, 75, 0, 255, 255);
+  ColorButton(410, 255, 75, 75, 63, 232, 37);
+  ColorButton(500, 255, 75, 75, 200, 50, 0);
 
+  //Difficulty
+  difficultyButton(320, 420, 75, 75, 1);
+  difficultyButton(410, 420, 75, 75, 2);
+  difficultyButton(500, 420, 75, 75, 3); 
+  
+  textSize(27);
+  textStyle(BOLD);
+  fill(249, 223, 52);
+  text('Chose your difficulty:',315,380);
+  fill(51);
+  text('Easy',329,470);
+  text('Hard',510,470);
+  textSize(18);
+  text('Medium',415,470);
+  
+  fill(255);
+  if(difficulty === 1){
+    text('Easy',425,410);
+  } else if(difficulty === 2){
+    text('Medium',415,410);
+  } else if(difficulty === 3){
+    text('Hard',425,410);
+  }
+  
+
+  
   fill(CRed, CGreen, CBlue);
   rect(25, 290, 280, 290, 15);
   if (CPerson === 2)
@@ -252,8 +278,9 @@ var rightScene = function() {
 
 var wrongScene = function() {
 
+  
   background(255, 0, 0);
-  button(110, 500, 400, 75, 255, -1);
+  button(110, 500, 400, 75, 255, -4);
   textSize(70);
   fill(255, 0, 0);
   text("TRY AGAIN", 110, 560);
@@ -265,11 +292,35 @@ var wrongScene = function() {
 
 }
 
-//DropDown
+//TempScene
 
-var DropDownScene = function() {
-  image(DropDown, 0, 0, 600, 620);
-  button(380, 400, 200, 75, 255, 1);
+var TempScene = function() {
+  
+  button(400, 520, 190, 50, 255, -1);
+  textSize(30);
+  fill(0);
+  text("TRY AGAIN", 410, 560);
+  
+}
+
+//temp scene 2
+
+var TempScene2 = function() {
+  
+  button(400, 520, 200, 50, 0, -1);
+  textSize(30);
+  fill(255);
+  text("TRY AGAIN", 410, 560);
+  
+}
+
+//JungleEncouragementScene
+
+var JungleEncouragementScene = function() {
+  
+  background(0);
+  image(JungleEncouragement,0, 0, 600, 600);
+  button(380, 390, 200, 75, 255, 1);
 
   if (CPerson === 2)
     image(TLady, 30, 290, 280, 280);
@@ -282,7 +333,62 @@ var DropDownScene = function() {
   
   textSize(70);
   fill(0);
-  text("Next", 400, 460);
+  text("Next", 400, 450);
+}
+  
+//RestartCautionScene
+
+var RestartCautionScene = function() {
+  
+  background(0);
+  image(RestartCaution,0, 0, 600, 600);
+  button(380, 390, 200, 75, 255, 1);
+
+  if (CPerson === 2)
+    image(TLady, 30, 290, 280, 280);
+  else if (CPerson === 1)
+    image(BoxMan, 10, 270, 330, 330);
+  else if (CPerson === 3)
+    image(NathanMan, 10, 210, 400, 400);
+  else if (CPerson === 4)
+    image(KaranMan, 10, 210, 400, 400);
+  
+  textSize(70);
+  fill(0);
+  text("Next", 400, 450);
+}
+
+//RobotRestartScene
+
+var RobotRestartScene = function() {
+  
+  background(0);
+  image(RobotRestart,-220, -70, 1050, 850);
+  button(400, 520, 200, 50, 255, 1);
+  textSize(30);
+  fill(0);
+  text("TRY AGAIN", 410, 560);
+  
+}
+
+//DropDown
+
+var DropDownScene = function() {
+  image(DropDown, 0, 0, 600, 620);
+  button(380, 490, 200, 75, 255, 1);
+
+  if (CPerson === 2)
+    image(TLady, 30, 290, 280, 280);
+  else if (CPerson === 1)
+    image(BoxMan, 10, 270, 330, 330);
+  else if (CPerson === 3)
+    image(NathanMan, 10, 210, 400, 400);
+  else if (CPerson === 4)
+    image(KaranMan, 10, 210, 400, 400);
+  
+  textSize(70);
+  fill(0);
+  text("Next", 400, 550);
 }
 
 //Chase Down
@@ -308,9 +414,9 @@ var EndMenu = function() {
   button(40, 470, 290, 65, 355, 1);
   textSize(30);
   fill(0);
-  text("KEEP ON GOING!", 60, 515);
+  text("ALL ABOUT US!", 60, 515);
 
-  button(280, 100, 280, 65, 255, -11);
+  button(280, 100, 280, 65, 255, -19);
   textSize(48);
   fill(0);
   text("Play Again!", 290, 150);
