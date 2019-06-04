@@ -1,6 +1,9 @@
 //Images
 
 function preload() {
+  
+  //images 
+  
   Jungle1 = loadImage('images/jungle.jpg');
   Jungle2 = loadImage('images/Jungle-1.png');
   Treasure = loadImage('images/treasure.jpg');
@@ -21,7 +24,16 @@ function preload() {
   chaseDown = loadImage('images/ChaseDown.jpg');
   DropDown = loadImage('images/DropDown.jpg');
   WarningRobot = loadImage('images/WarningRobot.jpg');
-   
+  RobotRestart = loadImage('images/RobotRestart.png');
+  JungleEncouragement = loadImage('images/JungleEncouragement.png');
+  RestartCaution = loadImage('images/RestartCaution.png');
+  
+  //sound effects
+  
+  JumpEffects = loadSound('Sound Effects/JumpSound.mp3');
+  ClickEffect = loadSound('Sound Effects/ClickSound.mp3');
+  ErrorEffect = loadSound('Sound Effects/ErrorSound.mp3');
+  
 }
 
 //button object
@@ -30,6 +42,7 @@ var button = function(buttonX, buttonY, buttonW, buttonH, color, sceneAdd) {
   fill(color);
   if (mouseIsPressed && buttonY < mouseY && buttonY + buttonH > mouseY && buttonX < mouseX && buttonX + buttonW > mouseX) {
     scene += sceneAdd;
+    ClickEffect.play();
   }
   rect(buttonX, buttonY, buttonW, buttonH, 5); // the button  
 }
@@ -54,12 +67,24 @@ var ColorButton = function(buttonX, buttonY, buttonW, buttonH, R,G,B) {
   rect(buttonX, buttonY, buttonW, buttonH, 5); // the button  
 }
 
+var difficultyButton = function(buttonX, buttonY, buttonW, buttonH, Difficulty) {
+  
+  if (mouseIsPressed && buttonY < mouseY && buttonY + buttonH > mouseY && buttonX < mouseX && buttonX + buttonW > mouseX) {
+    difficulty = Difficulty;
+  }
+  fill(255);
+  rect(buttonX, buttonY, buttonW, buttonH, 5); // the button  
+}
+
+
 
 //Question Scene objects
 
 var Qbutton = function(buttonX, buttonY, buttonW, buttonH, color, check) {
   fill(color);
   if (mouseIsPressed && buttonY < mouseY && buttonY + buttonH > mouseY && buttonX < mouseX && buttonX + buttonW > mouseX) {
+    ClickEffect.play();
+    
     if (check === 1) {
       fill(255, 170, 0);
       textSize(40);

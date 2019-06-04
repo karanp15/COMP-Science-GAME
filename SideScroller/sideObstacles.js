@@ -5,10 +5,11 @@ var sideRectAndCheck = function(x, y, w, h) {
   if (SidePerson.pos.y + SidePerson.height > y && SidePerson.pos.y < y + h && SidePerson.pos.x + SidePerson.width > x && SidePerson.pos.x < x + w) {
 
     hit--;
+    ErrorEffect.setVolume(0.05);
+    ErrorEffect.play();
   }
 }
 
-/*
 var SideCheckpoint = function(x, y, w, h){
 
   fill(0, 255, 0);
@@ -16,11 +17,14 @@ var SideCheckpoint = function(x, y, w, h){
 
   if (SidePerson.pos.x + SidePerson.width > x) {
 
-    scene++;
+    scene += 2;
+    SidePerson.pos.x = 0;
+    SidePerson.vel.x = 7; 
+    hit = 100;
     
   }
 }
-*/
+
 
 h = 0;
 var obticles = function() {
@@ -47,21 +51,8 @@ var obticles = function() {
       sideRectAndCheck(i, height - 330, 83, 450, 15);
     }
     
-    sideCheckpoint(2000,0,60,600)
-    
+           
     h++;
   }
   h = 0;
-}
-
-var sideCheckpoint = function(x, y, w, h){
-
-  fill(0, 255, 0);
-  rect(x, y, w, h);
-
-  if (person.pos.y + 75 + person.height > y && person.pos.y + 75 < y + h && person.pos.x + 75 + person.width > x && person.pos.x + 75 < x + w) {
-
-    scene++;
-    
-  }
 }

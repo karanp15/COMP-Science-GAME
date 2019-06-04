@@ -12,6 +12,7 @@ var healthBar = function(){
     scene++;  
     hit = 100;
     SidePerson.pos.x = 0;
+    SidePerson.vel.x = 7; 
   }
   
   text(hit, SidePerson.pos.x + 245, 50);
@@ -44,7 +45,7 @@ var SideGame = function() {
   
   if (k === 0) {
     obticles();
-    checkpoint()
+    SideCheckpoint(40000,0,100,600)
   }
   
   healthBar();

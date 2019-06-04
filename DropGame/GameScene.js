@@ -17,10 +17,10 @@ var GameDrop = function() {
   person.applyForce(gravity);
   translate(200, -person.pos.y);
   
-  for(var j = 0; j < 16200; j +=1800){
+  for(var j = 0; j < 12600; j +=1800){
     image(jungleDrop,100,j,600,1800);
   }
-  for(j = 16200; j < 20000; j +=1800){
+  for(j = 12600; j < 20000; j +=1800){
     image(jungleDrop2,100,j,600,1800);
   }
   
