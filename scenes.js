@@ -82,13 +82,15 @@ var Instruction = function() {
   fill(100, 309, 178);
   textSize(20);
   text(" - To Play The Lost Jungle Bank You First Need To Pick A Character. After That You Will Start Playing.", 60, 190, 500, 200);
-  text(" - To Move You Will Press The Arrow  Keys And Space Bar To Jump", 60, 250, 500, 200);
-  text(" - After That You Know The Basics, Just Rember Dont Let Rex Catch You!", 60, 450, 500, 200);
+  text(" - To Move You Will Press The Arrow  Keys And Spacebar To Jump", 60, 250, 500, 200);
+  text(" - After That You Know The Basics, Just Remember Don't Let The Robot Catch You!", 60, 450, 500, 200);
+  text(" - If You Can't Pass The Level And Want to restart then press Ctrl + R", 60, 510, 300, 100);
   image(Keys, 50, 300, 500, 150)
   button(380, 500, 200, 75, 200, -1);
   textSize(70);
   fill(60);
   text("Back", 400, 560);
+
 
 }
 
@@ -113,6 +115,8 @@ var Options = function() {
   Cbutton(35, 225, 215, 50, 2);
   Cbutton(-10, -10, 20, 20, 3);
   Cbutton(590, -10, 20, 20, 4);
+  Cbutton(-10, 590, 20, 20, 5);
+  Cbutton(590, 590, 20, 20, 6);
 
 
   //color option
@@ -125,31 +129,36 @@ var Options = function() {
   ColorButton(500, 255, 75, 75, 200, 50, 0);
 
   //Difficulty
-  difficultyButton(320, 420, 75, 75, 1);
-  difficultyButton(410, 420, 75, 75, 2);
-  difficultyButton(500, 420, 75, 75, 3); 
-  
+  difficultyButton(320, 390, 75, 75, 1);
+  difficultyButton(410, 390, 75, 75, 2);
+  difficultyButton(500, 390, 75, 75, 3);
+  difficultyButton(320, 470, 255, 30, 4);
+
   textSize(27);
   textStyle(BOLD);
   fill(249, 223, 52);
-  text('Chose your difficulty:',315,380);
+  text('Chose your difficulty:', 315, 355);
   fill(51);
-  text('Easy',329,470);
-  text('Hard',510,470);
+  text('Easy', 329, 440);
+  text('Hard', 510, 440);
   textSize(18);
-  text('Medium',415,470);
-  
-  fill(255);
-  if(difficulty === 1){
-    text('Easy',425,410);
-  } else if(difficulty === 2){
-    text('Medium',415,410);
-  } else if(difficulty === 3){
-    text('Hard',425,410);
-  }
-  
+  text('Medium', 415, 440);
+  fill(255,255,0);
+  text('INSANE', 415, 490);
 
-  
+  fill(255);
+  if (difficulty === 1) {
+    text('Easy', 425, 380);
+  } else if (difficulty === 2) {
+    text('Medium', 415, 380);
+  } else if (difficulty === 3) {
+    text('Hard', 425, 380);
+  } else if (difficulty === 4) {
+    text('INSANE', 415, 380);
+  }
+
+
+
   fill(CRed, CGreen, CBlue);
   rect(25, 290, 280, 290, 15);
   if (CPerson === 2)
@@ -159,6 +168,10 @@ var Options = function() {
   else if (CPerson === 3)
     image(NathanMan, 10, 270, 330, 330);
   else if (CPerson === 4)
+    image(KaranMan, 10, 270, 330, 330);
+  else if (CPerson === 5)
+    image(KaranMan, 10, 270, 330, 330);
+  else if (CPerson === 6)
     image(KaranMan, 10, 270, 330, 330);
 
   fill(120, 237, 233);
@@ -190,16 +203,16 @@ var StoryScene1 = function() {
 
 //WarningRobot Scene
 
-var WarningRobotScene = function(){
- 
+var WarningRobotScene = function() {
+
   background(255);
-  image(WarningRobot,-220,-100,1050,850);
+  image(WarningRobot, -220, -100, 1050, 850);
   textSize(35);
   button(280, 400, 200, 65, 255, 1);
   textSize(40);
   fill(0);
   text("LETS GO!", 290, 450);
-  
+
 }
 
 
@@ -278,7 +291,7 @@ var rightScene = function() {
 
 var wrongScene = function() {
 
-  
+
   background(255, 0, 0);
   button(110, 500, 400, 75, 255, -4);
   textSize(70);
@@ -295,31 +308,31 @@ var wrongScene = function() {
 //TempScene
 
 var TempScene = function() {
-  
+
   button(400, 520, 190, 50, 255, -1);
   textSize(30);
   fill(0);
   text("TRY AGAIN", 410, 560);
-  
+
 }
 
 //temp scene 2
 
 var TempScene2 = function() {
-  
+
   button(400, 520, 200, 50, 0, -1);
   textSize(30);
   fill(255);
   text("TRY AGAIN", 410, 560);
-  
+
 }
 
 //JungleEncouragementScene
 
 var JungleEncouragementScene = function() {
-  
+
   background(0);
-  image(JungleEncouragement,0, 0, 600, 600);
+  image(JungleEncouragement, 0, 0, 600, 600);
   button(380, 390, 200, 75, 255, 1);
 
   if (CPerson === 2)
@@ -330,18 +343,18 @@ var JungleEncouragementScene = function() {
     image(NathanMan, 10, 210, 400, 400);
   else if (CPerson === 4)
     image(KaranMan, 10, 210, 400, 400);
-  
+
   textSize(70);
   fill(0);
   text("Next", 400, 450);
 }
-  
+
 //RestartCautionScene
 
 var RestartCautionScene = function() {
-  
+
   background(0);
-  image(RestartCaution,0, 0, 600, 600);
+  image(RestartCaution, 0, 0, 600, 600);
   button(380, 390, 200, 75, 255, 1);
 
   if (CPerson === 2)
@@ -352,7 +365,7 @@ var RestartCautionScene = function() {
     image(NathanMan, 10, 210, 400, 400);
   else if (CPerson === 4)
     image(KaranMan, 10, 210, 400, 400);
-  
+
   textSize(70);
   fill(0);
   text("Next", 400, 450);
@@ -361,14 +374,14 @@ var RestartCautionScene = function() {
 //RobotRestartScene
 
 var RobotRestartScene = function() {
-  
+
   background(0);
-  image(RobotRestart,-220, -70, 1050, 850);
+  image(RobotRestart, -220, -70, 1050, 850);
   button(400, 520, 200, 50, 255, 1);
   textSize(30);
   fill(0);
   text("TRY AGAIN", 410, 560);
-  
+
 }
 
 //DropDown
@@ -385,7 +398,7 @@ var DropDownScene = function() {
     image(NathanMan, 10, 210, 400, 400);
   else if (CPerson === 4)
     image(KaranMan, 10, 210, 400, 400);
-  
+
   textSize(70);
   fill(0);
   text("Next", 400, 550);
@@ -416,7 +429,7 @@ var EndMenu = function() {
   fill(0);
   text("ALL ABOUT US!", 60, 515);
 
-  button(280, 100, 280, 65, 255, -19);
+  button(280, 100, 280, 65, 255, -20);
   textSize(48);
   fill(0);
   text("Play Again!", 290, 150);

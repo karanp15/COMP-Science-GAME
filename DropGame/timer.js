@@ -7,11 +7,13 @@ var timer = function() {
   textSize(20);
 
   if(difficulty === 1){
-    runningM = round(100 + (msBeforeScene10/1000) - (millisecond / 1000));
+    runningM = round(90 + (msBeforeScene10/1000) - (millisecond / 1000));
   } else if (difficulty === 2){
-    runningM = round(85 + (msBeforeScene10/1000) - (millisecond / 1000));
+    runningM = round(75 + (msBeforeScene10/1000) - (millisecond / 1000));
   }else if (difficulty === 3){
-    runningM = round(70 + (msBeforeScene10/1000) - (millisecond / 1000));
+    runningM = round(60 + (msBeforeScene10/1000) - (millisecond / 1000));
+  }else if (difficulty === 4){
+    runningM = round(53 + (msBeforeScene10/1000) - (millisecond / 1000));
   }
   
   if (runningM < 0) {

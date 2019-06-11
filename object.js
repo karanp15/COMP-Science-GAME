@@ -72,7 +72,11 @@ var difficultyButton = function(buttonX, buttonY, buttonW, buttonH, Difficulty) 
   if (mouseIsPressed && buttonY < mouseY && buttonY + buttonH > mouseY && buttonX < mouseX && buttonX + buttonW > mouseX) {
     difficulty = Difficulty;
   }
-  fill(255);
+  
+  if(Difficulty === 4){
+    fill(255,0,0);
+  }else
+    fill(255);
   rect(buttonX, buttonY, buttonW, buttonH, 5); // the button  
 }
 
@@ -131,7 +135,6 @@ var randomNumbers = function() {
 
   n1m = round(random(3, 7));
   n2m = round(random(3, 7));
-
 
   z1 = round(random(1, 8));
   z2 = round(random(1, 8));

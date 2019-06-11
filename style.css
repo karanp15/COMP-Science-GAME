@@ -4,20 +4,21 @@ body {
   padding: 0;
   background: #3770;
   background-image: url("https://101clipart.com/wp-content/uploads/16/Jungle%20Trees%20%20Clipart%2004.jpg");
-  
   background-position: center center;
 
 }
 
-
-#party-heading1 {
+#heading1 {
   text-align: center;
   font-family: arial;
-  font-size: 45px;
+  font-size: 50px;
   color: #2dff6c;
   text-shadow: 6px 4px BLACK;
 }
 
+
 canvas {
-  display: block;
-}
+
+    display: block;
+
+  }
