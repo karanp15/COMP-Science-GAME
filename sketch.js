@@ -46,10 +46,6 @@ function keyPressed() {
       var right = createVector(8, 0)
       person.applyForce(right);
 
-    } else if (keyCode === DOWN_ARROW || key === 's') {
-
-      var down = createVector(0, 150)
-      person.applyForce(down);
     }
   }
 }

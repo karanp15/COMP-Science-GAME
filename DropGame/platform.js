@@ -15,7 +15,7 @@ var platform = function() {
 
 var rectAndCheck = function(x, y, w, h) {
 
-  fill(180, 80, 0);
+  fill(CRed, CGreen, CBlue);
   rect(x, y, w, h);
 
   if (person.pos.y + 75 + person.height > y && person.pos.y + 75 < y + h && person.pos.x + 75 + person.width > x && person.pos.x + 75 < x + w) {
